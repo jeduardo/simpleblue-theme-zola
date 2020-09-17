@@ -54,14 +54,12 @@ If you want to paginate taxonomies pages, you will need to overwrite the templat
 This theme supports hiding pages from showing up in any listing. The implementation requires that every page has an attribute `hidden` specified in its header section, as below:
 
 ```toml
-+++
 title = "About me"
 in_search_index = false
 weight = 0
 
 [extra]
 hidden = true
-+++
 ```
 
 ## Configuration

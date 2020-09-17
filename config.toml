@@ -1,4 +1,4 @@
-base_url = "https://simpleblue-zola-theme.netlify"
+base_url = "https://simpleblue-zola-theme.netlify.app"
 title = "Website Name"
 description = "A simple description for my website"
 compile_sass = true

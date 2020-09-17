@@ -1,4 +1,4 @@
-base_url = "https://simple-blue-theme.github.io"
+base_url = "https://simpleblue-zola-theme.netlify"
 title = "Website Name"
 description = "A simple description for my website"
 compile_sass = true

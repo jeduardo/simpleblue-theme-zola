@@ -13,6 +13,7 @@ This is a simple theme for Zola based on dark colours and blue tones.
 - [Configuration](#configuration)
   - [Top navigation links](#top-navigation-links)
   - [Author](#author)
+- [References](#references)
 
 ## Installation
 
@@ -88,7 +89,7 @@ The theme displays the author name at the bottom of the layout. For it to work, 
 author = "Website Author"
 ```
 
-## Originals
+## References
 
 This theme was created from scratch but heavily drawing ideas, macros, and snippets from the [After Dark](https://github.com/getzola/after-dark) and [anpu](https://github.com/zbrox/anpu-zola-theme) themes, and I am grateful for the work and permissive licenses from their authors.
 

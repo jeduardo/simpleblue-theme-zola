@@ -1,0 +1,13 @@
+name = "simpleblue"
+description = "A simple dark and blue theme"
+license = "MIT"
+homepage = "https://github.com/jeduardo/simpleblue-theme-zola"
+min_version = "0.1"
+demo = "https://allyourba.se/"
+
+[extra]
+
+
+[author]
+name = "jeduardo"
+homepage = "https://github.com/jeduardo/"

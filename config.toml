@@ -1,0 +1,21 @@
+base_url = "https://simple-blue-theme.github.io"
+title = "Website Name"
+description = "A simple description for my website"
+compile_sass = true
+highlight_code = true
+highlight_theme = "visual-studio-dark"
+build_search_index = false
+generate_feed = true
+
+taxonomies = [
+  {name = "categories"},
+  {name = "tags"}
+]
+
+[extra]
+author = "Website Author"
+nav_links = [
+  { url = "$BASE_URL/categories/", name = "Categories"},
+  { url = "$BASE_URL/tags/", name = "Tags"},
+  { url = "$BASE_URL/atom.xml", name = "Follow"}
+]

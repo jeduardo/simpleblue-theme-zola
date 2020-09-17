@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+
+{%- block title %}{{ term.name }}{% endblock title%}
+
+{%- block content %}
+<!-- tags/single.html -->
+<h1>{{ term.name | title }}</h1>
+{%- for page in term.pages %}
+{{ page_macros::page_listing(page=page) }}
+{%- endfor %}
+
+{%- endblock content %}

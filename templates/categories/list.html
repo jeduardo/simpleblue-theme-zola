@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+{%- block title %}categories{%- endblock title%}
+
+{%- block content %}
+<!-- categories/list.html -->
+<h1>Categories</h1>
+
+<ul class="terms">
+    {%- for term in terms %}
+    <li>
+        <a href="{{ term.permalink }}">{{ term.name }}</a>
+    </li>
+    {%- endfor %}
+</ul>
+{%- endblock content %}

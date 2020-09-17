@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+
+{% block title %}tags{% endblock title%}
+
+{%- block content %}
+<!-- tags/list.html -->
+<h1>Tags</h1>
+
+<ul class="terms">
+    {%- for term in terms %}
+    <li>
+        <a href="{{ term.permalink }}">{{ term.name }}</a>
+    </li>
+    {%- endfor %}
+</ul>
+{%- endblock content %}

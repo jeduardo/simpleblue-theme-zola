@@ -1,0 +1,64 @@
+{% import "macros/page.html" as page_macros %}
+<!DOCTYPE html>
+<!-- index.html -->
+<html lang="{% if lang %}{{ lang }}{% else %}en{% endif %}">
+<head>
+    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+    {%- if config.description %}
+    <meta name="description" content="{{ config.description }}">
+    {% endif %}
+    {%- if config.author %}
+    <meta name="author" content="{{ config.author }}">
+    {% endif %}
+    {%- if config.extra.author %}
+    <meta name="author" content="{{ config.extra.author }}">
+    {% endif %}
+    <!-- this fixes weird font sizes on mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {%- if config.generate_feed %}
+    <link rel="alternate" type={% if config.feed_filename == "atom.xml" %}"application/atom+xml"{% else %}"application/rss+xml"{% endif %} title="RSS" href="{{ get_url(path=config.feed_filename) | safe }}">
+    {% endif %}
+    {%- block css %}
+    <link rel="stylesheet" href="{{ get_url(path="site.css", trailing_slash=false) | safe }}">
+    {% endblock css %}
+    {%- block extra_head %}
+    {%- endblock extra_head %}
+</head>
+<body>
+    <header class="navmain">
+        <a href="{{ config.base_url }}">{{ config.title }}</a>
+    </header>
+    <nav class="navmain">
+        {%- for menu in config.extra.nav_links %}
+            / <a href="{{ menu.url | replace(from="$BASE_URL", to=config.base_url) }}">{{ menu.name }}</a>
+        {%- endfor %}
+    </nav>
+    <main>
+    {%- block content %}
+        {%- if not section.title %}
+        <h1>Articles</h1>
+        {%- endif %}
+        {%- block header %}
+            {%- if paginator.pages %}
+            <!-- index.html(using paginator)-->
+            {%- for page in paginator.pages | filter(attribute="extra.hidden", value=false) %}
+                {{ page_macros::page_listing(page=page) }}
+            {%- endfor %}
+            {{ page_macros::page_pagination(paginator=paginator) }}
+            {%- else %}
+            <!-- index.html(not using paginator)-->
+            {%- for page in section.pages | filter(attribute="extra.hidden", value=false) %}
+                {{ page_macros::page_listing(page=page) }}
+            {%- endfor %}
+            {%- endif %}
+        {%- endblock header %}
+    {%- endblock content %}
+    </main>
+    <footer>
+        {% block copyright %}
+            Powered by <a href="https://www.getzola.org/">Zola</a> and the
+            <a href="https://github.com/jeduardo/simpleblue-theme-zola">simpleblue</a> theme. <br/>Copyright &copy; 2020 {{ config.extra.author }}.
+        {% endblock copyright %}
+    </footer>
+</body>
+</html>

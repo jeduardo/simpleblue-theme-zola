@@ -1,5 +1,5 @@
 +++
-title = "Hello World"
+title = "First Post Externalized Theme"
 description = "A quick overview on how to say hello to the world"
 date = 2020-08-01
 updated = 2020-08-02
@@ -67,9 +67,14 @@ Ok, really beautiful. Now let's try a quoted passage:
 Now I also want to use some `formatted` words inside the text. Beautiful. Now let's try go get an image into the page.
 
 {{ image(path="/sample-image.jpg", alt="This is a sample inserted
-from a resized image") }}
+from a resized image", link="/sample-image-large.jpg") }}
 
-Now it is here.
+Now it is here, with the link and everything. But will it work without a link in the image?
+
+{{ image(path="/sample-image.jpg", alt="This is a sample inserted
+from a resized image, this time without a link") }}
+
+Yes it will. And this concludes the showcase and test of all functionality provided by this theme.
 
 {% footnote(id=1) %}
 For all sections except the top-level index, you also need to add an `_index.md`.

@@ -1,4 +1,8 @@
-<figure>
-    <img src="{{ path }}" alt="{{ alt }}"/>
-    <figcaption>{{ alt }}</figcaption>
-</figure>
+<div class="center">
+    <figure>
+        {%- if link %}<a class="figlink" href="{{ link }}">{%- endif %}
+        <img src="{{ path }}" alt="{{ alt }}"/>
+        {%- if link %}</a>{%- endif %}
+        <figcaption>{{ alt }}</figcaption>
+    </figure>
+</div>
